@@ -8,9 +8,9 @@ import {
   MaterialIcons,
   Ionicons,
 } from '@expo/vector-icons';
-import car from './assets/images/car.png'
-import menuOptions from './assets/menuOptions';
-import MenuOption from './components/MenuOption';
+import car from '../assets/images/car.png'
+import menuOptions from '../assets/menuOptions';
+import MenuOption from '../components/MenuOption';
 import { registerRootComponent} from 'expo'
 
 // class App extends Component {
