@@ -32,7 +32,7 @@ export default [
   {
     name: 'Pet mode',
     iconName: 'dog',
-    href: '/pet',
+    href: '/pet-mode',
   },
   {
     name: 'Doctor',
