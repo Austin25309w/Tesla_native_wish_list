@@ -7,7 +7,7 @@ import {
     Ionicons,
     MaterialIcons,
 } from '@expo/vector-icons';
-import car from '../assets/images/car.png'
+import car from '../assets/images/car.jpeg'
 import menuOptions from '../assets/menuOptions';
 import MenuOption from "../components/MenuOption";
 
