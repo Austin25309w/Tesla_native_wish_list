@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, FlatList, Button } from 'react-native';
 import {
   FontAwesome,
   Entypo,
@@ -11,16 +10,9 @@ import {
 import car from './assets/images/car.png'
 import menuOptions from './assets/menuOptions';
 import MenuOption from './components/MenuOption';
-import { registerRootComponent} from 'expo'
-
-// class App extends Component {
-//     ...
-//   }
-  
-//   export default Expo.registerRootComponent(App);
 
 
-const Control = () => {
+const Controls = () => {
   return (
     <View style={styles.controls}>
         <Entypo name="lock" size={26} color="gray" />
@@ -33,24 +25,24 @@ const Control = () => {
 
 export default function App() {
   return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <View>
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <View>
             <Text style ={styles.title}>My Model S</Text>
             <Text style = {styles.subtitle}>Parked</Text>
-          </View>
-          <FontAwesome name="user-circle" size={30} color="grey" />
         </View>
-        <Image source={car} style={styles.image} resizeMode='contain'/>
-        {/* <Control/> */}
-        {/* FlatList is a component that allow to render list of items */}
-        <FlatList 
+        <FontAwesome name="user-circle" size={30} color="grey" />
+      </View>
+      <Image source={car} style={styles.image} resizeMode='contain'/>
+      {/* <Control/> */}
+      {/* FlatList is a component that allow to render list of items */}
+      <FlatList 
           data={menuOptions}
           showsVerticalScrollIndicator = {false}
           renderItem={MenuOption}
-          ListHeaderComponent= {Control}
-        />
-      </View>
+          ListHeaderComponent= {Controls}
+      />
+    </View>
   );
 }
 
@@ -76,10 +68,10 @@ const styles = StyleSheet.create({
     fontWeight: '500'
   },
   image: {
-    height:200,
-    width: '100%'
+    width: '100%',
+    height:300,
   },
-  controls:{
+  controls: {
     flexDirection: 'row',
     justifyContent:'space-around',
     marginVertical:20

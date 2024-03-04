@@ -1,5 +1,5 @@
 
-import { Text, View, StyleSheet, Pressable} from 'react-native';
+import {  StyleSheet,Text, Pressable} from 'react-native';
 import {
   MaterialCommunityIcons,
   MaterialIcons,
@@ -13,27 +13,22 @@ const MenuOption = ({item}) => {
 
     return (
        <Link href ={item.href} asChild>
-        <View style = {styles.optionRow} >
-              {/* Icon */}
-
-              <MaterialCommunityIcons name={item.iconName} size={26} color="grey" />
-              
-              {/* Text */}
-              <Text style={styles.optionText}> {item.name} </Text>
-              {/* Icon */}
-              <MaterialIcons 
-                  name= "keyboard-arrow-right"
-                  size={24} 
-                  color="green"
-                  style={{marginLeft:'auto'}}
-              />
-        </View>
+         <Pressable style = {styles.optionRow}>
+          <MaterialCommunityIcons name={item.iconName} size={26} color="grey" />
+          <Text style={styles.optionText}> {item.name} </Text>
+          <MaterialIcons 
+              name= "keyboard-arrow-right"
+              size={24} 
+              color="green"
+              style={{marginLeft:'auto'}}
+          />
+         </Pressable>
       </Link>
     )
   }
 
 const styles = StyleSheet.create({
-      optionRow:{
+  optionRow:{
     flexDirection: 'row',
     marginVertical: 20,
     alignItems: 'center'
@@ -55,6 +50,3 @@ const styles = StyleSheet.create({
   // 1:12:51 different screen
   //1:14:54
 
-
-
- 
