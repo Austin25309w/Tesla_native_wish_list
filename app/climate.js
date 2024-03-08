@@ -8,8 +8,11 @@ import { useState } from 'react';
 // const TAB_BAR_HEIGHT = 49;
 
 const ClimateScreen = () => {
-    const [temperature, setTempreture] = useState(68); {/* default 68 degree */}
     const router = useRouter();
+    const [temperature, setTempreture] = useState(68); {/* default 68 degree */}
+    const [on, setOn] = useState(false); {/* clamate switch */}
+    const [vent, setVent] = useState(false); {/* air vent */}
+    
   return (
     <View style ={styles.container}>
         {/* load image */}
@@ -23,23 +26,34 @@ const ClimateScreen = () => {
             <Text style = {styles.label}>Interior 74°F - Exterior 66°F</Text>
             {/* turn on climate */}
             <View style = {styles.controlsRow}>
-                <View style={styles.buttonContainer}>
-                    <MaterialCommunityIcons name="power" size={42} color="white" />
-                    <Text style={styles.buttonText}>On</Text>
-                </View>
+                <Pressable
+                    onPress={()=> setOn(!on)} 
+                    style={styles.buttonContainer}
+                    >
+                    <MaterialCommunityIcons name="power" size={42} color={on ? 'white' : 'grey'} />
+                    <Text style={styles.buttonText}>{on ? 'On' : 'Off'}</Text>
+                </Pressable>
 
                 {/* temperature level */}
                 <View style={styles.temperatureContainer}>
-                    <Entypo name="chevron-left" size={30} color="gray"/>
-                    <Text style={styles.temperatureText}>68°F</Text>
-                    <Entypo name="chevron-right" size={30} color="gray"/>
+                    <Entypo 
+                        onPress={()=> setTempreture( temperature - 1 )} 
+                        name="chevron-left" size={30} color="gray"
+                    />
+                    <Text style={styles.temperatureText}>{temperature}°</Text>
+                    <Entypo 
+                        onPress={()=> setTempreture( temperature + 1 )} 
+                        name="chevron-right" size={30} color="gray"
+                        />
                 </View>
 
             {/* window vent  */}
-            <View style={styles.buttonContainer}>
-                <MaterialCommunityIcons name="car-door" size={42} color="gray" />
-                <Text style={styles.buttonText}>Vent</Text>
-            </View>
+            <Pressable
+                onPress={()=> setVent(!vent)}
+                    style={styles.buttonContainer}>
+                <MaterialCommunityIcons name="car-door" size={42} color={vent ? 'white' : 'grey'} />
+                <Text style={styles.buttonText} >{vent ? 'Vent' : 'Close'}</Text>
+            </Pressable>
         </View>
         </View >
     </View>
