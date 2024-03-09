@@ -4,6 +4,7 @@ import BottomDrawer from 'rn-bottom-drawer'
 import { MaterialCommunityIcons, Entypo } from '@expo/vector-icons'
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
+import { BottomDrawer } from '../components/BottomDrawer';
 
 // const TAB_BAR_HEIGHT = 49;
 
@@ -45,6 +46,7 @@ const ClimateScreen = () => {
                         onPress={()=> setTempreture( temperature + 1 )} 
                         name="chevron-right" size={30} color="gray"
                         />
+                    <BottomDrawer />
                 </View>
 
             {/* window vent  */}
