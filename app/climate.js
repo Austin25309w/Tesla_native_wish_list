@@ -1,16 +1,15 @@
 import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
 import climate from '../assets/images/climate.png';
-import BottomDrawer from 'rn-bottom-drawer'
 import { MaterialCommunityIcons, Entypo } from '@expo/vector-icons'
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
-import { BottomDrawer } from '../components/BottomDrawer';
+import BottomDrawer from '../components/BottomDrawer'
 
 // const TAB_BAR_HEIGHT = 49;
 
 const ClimateScreen = () => {
     const router = useRouter();
-    const [temperature, setTempreture] = useState(68); {/* default 68 degree */}
+    const [temperature, setTemperature] = useState(68); {/* default 68 degree */}
     const [on, setOn] = useState(false); {/* clamate switch */}
     const [vent, setVent] = useState(false); {/* air vent */}
     
@@ -38,15 +37,15 @@ const ClimateScreen = () => {
                 {/* temperature level */}
                 <View style={styles.temperatureContainer}>
                     <Entypo 
-                        onPress={()=> setTempreture( temperature - 1 )} 
+                        onPress={()=> setTemperature( temperature - 1 )} 
                         name="chevron-left" size={30} color="gray"
                     />
                     <Text style={styles.temperatureText}>{temperature}°</Text>
                     <Entypo 
-                        onPress={()=> setTempreture( temperature + 1 )} 
+                        onPress={()=> setTemperature( temperature + 1 )} 
                         name="chevron-right" size={30} color="gray"
                         />
-                    <BottomDrawer />
+                    
                 </View>
 
             {/* window vent  */}
@@ -57,7 +56,9 @@ const ClimateScreen = () => {
                 <Text style={styles.buttonText} >{vent ? 'Vent' : 'Close'}</Text>
             </Pressable>
         </View>
+        
         </View >
+        <BottomDrawer/>
     </View>
   )
 };

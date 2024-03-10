@@ -39,7 +39,6 @@ export default function Page() {
             renderItem={MenuOption}
             ListHeaderComponent={Controls}
         />
-
     </View>
   );
 }
