@@ -132,3 +132,5 @@ const styles = StyleSheet.create({
 // >
 //     BottomDrawer
 // </BottomDrawer>
+
+// https://www.npmjs.com/package/react-native-modal
