@@ -1,9 +1,13 @@
-import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
+import { SafeAreaView, TouchableOpacity, View, Text, StyleSheet, Image, Pressable } from 'react-native';
 import climate from '../assets/images/climate.png';
 import { MaterialCommunityIcons, Entypo } from '@expo/vector-icons'
 import { useRouter } from 'expo-router';
-import { useState } from 'react';
-import BottomDrawer from '../components/BottomDrawer'
+import React, { useRef, useState } from 'react';
+// import BottomDrawer from '../components/BottomDrawer'
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { StatusBar } from 'expo-status-bar';
+import  BottomSheet  from '../components/BottomSheet';
+
 
 // const TAB_BAR_HEIGHT = 49;
 
@@ -12,7 +16,9 @@ const ClimateScreen = () => {
     const [temperature, setTemperature] = useState(68); {/* default 68 degree */}
     const [on, setOn] = useState(false); {/* clamate switch */}
     const [vent, setVent] = useState(false); {/* air vent */}
-    
+    const bottomSheet = useRef();
+
+
   return (
     <View style ={styles.container}>
         {/* load image */}
@@ -58,7 +64,16 @@ const ClimateScreen = () => {
         </View>
         
         </View >
-        <BottomDrawer/>
+        {/* <BottomDrawer/> */}
+        <GestureHandlerRootView style ={{ flex: 1}}>
+            <View style={styles.sheetContainer}>
+                <StatusBar style= 'light'/>
+                <BottomSheet />
+            </View>
+            
+        </GestureHandlerRootView>
+        
+        
     </View>
   )
 };
@@ -70,6 +85,16 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#161818",
     },
+    sheetContainer:{
+        flex: 1,
+        backgroundColor: '#111',
+        alignItems: 'center',
+        justifyContent:'center'
+    },
+    contentContainer: {
+        flex: 1,
+        alignItems: 'center',
+      },
     image: {
         width: "100%",
         height: '65%',
@@ -117,7 +142,27 @@ const styles = StyleSheet.create({
         fontWeight: '300',
         color: 'white',
         marginHorizontal: 20
-    }
+    },
+    button: {
+        height: 50,
+        width: 150,
+        backgroundColor: "#140078",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 20,
+        shadowColor: "#8559da",
+        shadowOpacity: 0.7,
+        shadowOffset: {
+          height: 4,
+          width: 4,
+        },
+        shadowRadius: 5,
+        elevation: 6,
+      },
+      text: {
+        color: "white",
+        fontWeight: "600",
+      },
 
 });
 
@@ -134,3 +179,7 @@ const styles = StyleSheet.create({
 // </BottomDrawer>
 
 // https://www.npmjs.com/package/react-native-modal
+
+// https://www.npmjs.com/package/react-native-gesture-handler
+
+// https://www.npmjs.com/package/react-native-reanimated
