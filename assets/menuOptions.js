@@ -15,6 +15,11 @@ export default [
     href: '/location',
   },
   {
+    name: 'Journey',
+    iconName: 'book',
+    href: '/journey',
+  },
+  {
     name: 'Summon',
     iconName: 'ship-wheel',
     href: '/summon',
