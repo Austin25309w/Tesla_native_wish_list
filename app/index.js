@@ -10,6 +10,7 @@ import {
 import car from '../assets/images/car.jpeg'
 import menuOptions from '../assets/menuOptions';
 import MenuOption from "../components/MenuOption";
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 const Controls = () => {
     return (
@@ -40,6 +41,7 @@ export default function Page() {
             ListHeaderComponent={Controls}
         />
     </View>
+    
   );
 }
 

@@ -6,7 +6,7 @@ import React, { useRef, useState } from 'react';
 // import BottomDrawer from '../components/BottomDrawer'
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
-import  BottomSheet  from '../components/BottomSheet';
+import  BottomTray  from '../components/BottomTray';
 
 
 // const TAB_BAR_HEIGHT = 49;
@@ -64,14 +64,7 @@ const ClimateScreen = () => {
         </View>
         
         </View >
-        {/* <BottomDrawer/> */}
-        <GestureHandlerRootView style ={{ flex: 1}}>
-            <View style={styles.sheetContainer}>
-                <StatusBar style= 'light'/>
-                <BottomSheet />
-            </View>
-            
-        </GestureHandlerRootView>
+        <BottomTray />
         
         
     </View>
