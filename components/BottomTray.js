@@ -11,7 +11,7 @@ const BottomTray = () => {
   const [on, setOn] = useState(false); {/* clamate switch */}
   const [vent, setVent] = useState(false); {/* air vent */}
 
-  const snapPoints = useMemo(()=> ["25%", "50%"],[]) ;
+  const snapPoints = useMemo(()=> ["60%", "150%"],[]) ;
 
   return (
     <GestureHandlerRootView style={{ flex: 1}}>
