@@ -1,7 +1,7 @@
 const { createServer } = require('node:http');
 const { MongoClient } = require('mongodb');
 
-const uri = 'mongodb://localhost:27017';
+const uri = 'mongodb://localhost:27017/tesladata';
 
 const client = new MongoClient(uri);
 
@@ -10,6 +10,13 @@ async function connectToMongoDB() {
         // connect the client to the MongoDB server
         await client.connect();
         console.log('Connected to MongoDB');
+        const database = client.db('tesladata');
+        const collection = database.collection('tesladata');
+
+        const result = await collection.insertOne({ name: "Tesla Model S", color: "white"});
+
+        console.log('Document inserted:', result.insertedId)
+
         // Code for database operations goes here
         // e.g., insert, update, delete, find operations
     } catch (error){
