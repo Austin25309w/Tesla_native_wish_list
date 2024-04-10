@@ -20,6 +20,11 @@ export default [
     href: '/journey',
   },
   {
+    name: 'Robotaxi',
+    iconName: 'taxi',
+    href: '/taxi',
+  },
+  {
     name: 'Summon',
     iconName: 'ship-wheel',
     href: '/summon',
